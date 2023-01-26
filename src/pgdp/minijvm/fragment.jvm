@@ -14,10 +14,10 @@ STORE 0
 LOAD 0
 CONST 0
 LESS
-FJUMP label:
+FJUMP label
 
 LOAD 0
-NEQ
+NEG
 STORE 0
 
 label:
