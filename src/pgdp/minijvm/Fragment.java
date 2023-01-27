@@ -7,10 +7,57 @@ import java.io.InputStreamReader;
 public class Fragment {
 
     public void fragment() {
-
         /* TODO: Schreibe die Methode, welche zum Bytecode in fragment.jvm kompiliert wurde. read() und write() sind
             bereits implementiert. lcm() ist die Methode die von CALL lcm aufgerufen wird. */
 
+        //ALLOC 2
+        int a, b;
+
+        //READ
+        //STORE 0
+        a = read();
+
+        //READ
+        //STORE 1
+        b = read();
+
+        //LOAD 0
+        //LOAD 1
+        //MUL
+        //STORE 0
+        a = a * b;
+
+        //LOAD 0
+        //CONST 0
+        //LESS
+        //FJUMP label
+        if (a < 0) {
+
+            //LOAD 0
+            //NEG
+            //STORE 0
+            a = -a;
+        }
+
+        //label:
+
+        //LOAD 0
+        //LOAD 1
+        //CALL lcm
+        //STORE 1
+        b = lcm(a, b);
+
+        //LOAD 0
+        //LOAD 1
+        //DIV
+        //STORE 1
+        b = a / b;
+
+        //LOAD 1
+        //WRITE
+        write(b);
+
+        //HALT
     }
 
     /**
